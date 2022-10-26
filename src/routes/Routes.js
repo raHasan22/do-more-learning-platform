@@ -19,7 +19,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/courses/:id',
-                element: <CourseDetail></CourseDetail>
+                element: <CourseDetail></CourseDetail>,
+                loader: ({params}) => fetch(`https://learning-platform-server-side-beryl.vercel.app/courses/${params.id}`)
             }
         ]
     }
