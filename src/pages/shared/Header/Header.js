@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
+import LeftNav from '../leftNav/LeftNav';
 
 const Header = () => {
     return (
@@ -25,10 +26,13 @@ const Header = () => {
             </Nav>
             <Nav>
               <Nav.Link href="#deets">More deets</Nav.Link>
-              <Nav.Link eventKey={2} href="#memes">
-                Dank memes
-              </Nav.Link>
+              <Navbar.Text>
+                <p className='m-lg-2 m-0'><Link className='text-decoration-none text-reset' to='/login'>Log In</Link></p>
+              </Navbar.Text>
             </Nav>
+            <div className='d-lg-none'>
+              <LeftNav></LeftNav>
+            </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>

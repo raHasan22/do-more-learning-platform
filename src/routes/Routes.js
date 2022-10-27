@@ -4,6 +4,7 @@ import CourseDetail from "../pages/CourseDetail/CourseDetail";
 import Courses from "../pages/Courses/Courses";
 import Home from "../pages/Home/Home";
 import Blogs from "../pages/blogs/Blogs";
+import Login from "../pages/login/Login";
 
 export const routes = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/blogs',
                 element: <Blogs></Blogs>
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
             }
         ]
     }

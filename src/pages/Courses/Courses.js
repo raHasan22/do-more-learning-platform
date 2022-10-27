@@ -12,7 +12,7 @@ const Courses = () => {
     }, [])
     return (
         <div>
-            <h2>courses</h2>
+            <h2>Courses</h2>
             <div className='courses-box'>
                 {
                     courses.map(course => <div key={course.id}>

@@ -15,7 +15,7 @@ const LeftNav = () => {
 
     return (
         <div>
-        <h4 className='p-2'>Course detail</h4>
+        <h4 className='p-2 text-primary'>Course detail</h4>
         <ul className="list-group">
             {
                 courses.map(course => <li key={course.id} className ="list-group-item"><Link to={`/courses/${course.id}`} className='text-decoration-none' >{course.name}</Link></li>)
