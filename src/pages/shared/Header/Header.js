@@ -37,7 +37,7 @@ const Header = () => {
             </Nav>
             <Nav>
               <Navbar.Text>
-                <p className='m-lg-2 m-0'><Link className='text-decoration-none text-reset' to='/login'>Log In</Link></p>
+                <p className='m-lg-2 m-0'><Link className='text-decoration-none' to='/login'>Log In</Link></p>
               </Navbar.Text>
               {
                 user?.uid ?
