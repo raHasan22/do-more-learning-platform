@@ -7,6 +7,7 @@ import Blogs from "../pages/blogs/Blogs";
 import Login from "../pages/login/Login";
 import Registration from "../pages/registration/Registration";
 import Purchase from "../pages/Purchase/Purchase";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -40,7 +41,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/buy',
-                element: <Purchase></Purchase>
+                element: <PrivateRoute><Purchase></Purchase></PrivateRoute>
             }
         ]
     }

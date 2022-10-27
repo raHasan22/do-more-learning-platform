@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/authprovider/AuthProvider';
 
 
@@ -9,6 +9,9 @@ const Login = () => {
 
     const {signIn} = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = event =>{
         event.preventDefault();
@@ -20,7 +23,7 @@ const Login = () => {
             const user =result.user;
             console.log(user); 
             form.reset();
-            navigate('/courses');   
+            navigate(from, { replace: true });   
         })
         .catch(error => {
             console.error(error)
