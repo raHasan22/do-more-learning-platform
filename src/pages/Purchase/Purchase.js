@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
-import CourseDetail from '../CourseDetail/CourseDetail';
+import { Col, Container, Row } from 'react-bootstrap';
+import Checkout from './Checkout';
+import Price from './Price';
 
 
 const Purchase = () => {
@@ -8,7 +9,13 @@ const Purchase = () => {
     const [value, setValue] = useState(0)
 
     function handleBuy(a){
-        console.log(a)
+        const x = parseInt(a.price);
+        setValue(value + x);
+    }
+
+    function handleCheckout(){
+        alert("Purchase Complete, Let's start coding")
+        setValue(0);
     }
 
     useEffect(() => {
@@ -25,25 +32,20 @@ const Purchase = () => {
                         <Col lg="9">
                             <div>
                             {
-                                courses.map(course => <Card className='mb-4'>
-                                    <Card.Header>{course.name}</Card.Header>
-                                    <Card.Body>
-                                        <Card.Title>${course.price}</Card.Title>
-                                        <Card.Text>
-                                           {CourseDetail.detail}
-                                        </Card.Text>
-                                        <Button onClick={handleBuy(course)} variant="primary">Purchase</Button>
-                                    </Card.Body>
-                                </Card>)
+                                courses.map(course => <Price
+                                key={course.id}
+                                course={course}
+                                handleBuy = {handleBuy}
+                                ></Price>)
                             }
                             </div>
                         </Col>
                         <Col lg="3">
-                            <div>
-                                <p><strong>Total : $</strong> {value} </p>
-
-                                <Button>Purchase</Button>
-                            </div>
+                            <Checkout
+                            value = {value}
+                            handleCheckout = {handleCheckout}
+                            >
+                            </Checkout>
                         </Col>
                     </Row>
             </Container>
