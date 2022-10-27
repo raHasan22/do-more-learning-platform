@@ -3,9 +3,9 @@ import { Accordion } from 'react-bootstrap';
 
 const Blogs = () => {
     return (
-        <div>
+        <div className='mt-4 mb-5'>
             <h2>Blog</h2>
-            <Accordion>
+            <Accordion className='mt-3 mb-5 pb-5'>
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>what is cors ?</Accordion.Header>
                     <Accordion.Body>

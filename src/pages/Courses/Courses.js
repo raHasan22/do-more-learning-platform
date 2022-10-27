@@ -16,7 +16,7 @@ const Courses = () => {
             <div className='courses-box'>
                 {
                     courses.map(course => <div key={course.id}>
-                            <Card style={{ width: '18rem', height: '28rem'}}>
+                            <Card className='shadow m-auto' style={{ width: '18rem', height: '28rem'}}>
                             <Card.Img variant="top" src={course.image} />
                             <Card.Body>
                                 <Card.Title>{course.name}</Card.Title>
