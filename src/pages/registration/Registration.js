@@ -37,7 +37,10 @@ const Registration = () => {
             form.reset(); 
             handleUpdateUserProfile(name, photoURL);
         })
-        .catch(error => console.error(error));
+        .catch(error => {
+            console.error(error)
+            alert(error.message)
+        });
     }
 
     const handleUpdateUserProfile = (name, photoURL) => {

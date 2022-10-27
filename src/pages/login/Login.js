@@ -22,7 +22,10 @@ const Login = () => {
             form.reset();
             navigate('/courses');   
         })
-        .catch(error => console.error(error));
+        .catch(error => {
+            console.error(error)
+            alert(error.message)
+        });
     }
 
 

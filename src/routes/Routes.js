@@ -6,6 +6,7 @@ import Home from "../pages/Home/Home";
 import Blogs from "../pages/blogs/Blogs";
 import Login from "../pages/login/Login";
 import Registration from "../pages/registration/Registration";
+import Purchase from "../pages/Purchase/Purchase";
 
 export const routes = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/reg',
                 element: <Registration></Registration>
+            },
+            {
+                path: '/buy',
+                element: <Purchase></Purchase>
             }
         ]
     }

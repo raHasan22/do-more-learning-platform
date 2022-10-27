@@ -22,6 +22,9 @@ const LeftNav = () => {
             }
             
         </ul>
+        <div className='my-2 text-center'>
+        <p><Link to='/buy' className='text-decoration-none text-dark' >Go Premium</Link></p>
+        </div>
         </div>
     );
 };
