@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { FaMoneyCheck } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const LeftNav = () => {
@@ -23,7 +24,7 @@ const LeftNav = () => {
             
         </ul>
         <div className='my-2 text-center'>
-        <p><Link to='/buy' className='text-decoration-none text-dark' >Go Premium</Link></p>
+        <p><Link to='/buy' className='text-decoration-none text-dark' > <FaMoneyCheck></FaMoneyCheck> Go Premium</Link></p>
         </div>
         </div>
     );

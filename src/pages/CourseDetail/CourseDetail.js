@@ -16,9 +16,6 @@ const CourseDetail = () => {
                 </Card.Text>
                 <Card.Text><FaStar className='text-warning h5' /> {course.rating} 
                 </Card.Text>
-                <Card.Text>
-                    ${course.price}
-                </Card.Text>
             </Card.Body>
             </Card>
         </div>
