@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Image } from 'react-bootstrap';
+import { Button, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -10,7 +10,13 @@ import { AuthContext } from '../../../contexts/authprovider/AuthProvider';
 import LeftNav from '../leftNav/LeftNav';
 
 const Header = () => {
-  const { user } = useContext(AuthContext)
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () =>{
+    logOut()
+    .then( () => {})
+    .catch( error => console.error(error))
+  }
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className='mb-4'>
         <Container>
@@ -33,13 +39,17 @@ const Header = () => {
               <Navbar.Text>
                 <p className='m-lg-2 m-0'><Link className='text-decoration-none text-reset' to='/login'>Log In</Link></p>
               </Navbar.Text>
-              <Navbar.Text>
-                <p className='m-lg-2 m-0'><Link className='text-decoration-none text-reset' to='/blogs'>{user?.displayName}</Link></p>
-              </Navbar.Text>
+              {
+                user?.uid ?
+                <Navbar.Text>
+                <Button onClick={handleLogOut} variant="dark">Log out</Button>
+                </Navbar.Text>:
+                <Button variant="dark"><Link className='text-decoration-none text-reset text-light' to='/reg'>Sign Up</Link></Button>
+              }
               <Navbar.Text>
                 <p className='m-lg-2 m-0'>
-                { user.photoURL ?
-                  <Image style={{height: '30px' }} roundedCircle src={user?.photoURL}></Image>
+                { user?.photoURL ?
+                  <Image style={{height: '30px' }} roundedCircle title={user?.displayName} src={ user?.photoURL }></Image>
                   : <FaUser></FaUser>
                 }</p>
               </Navbar.Text>
