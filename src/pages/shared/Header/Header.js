@@ -19,7 +19,7 @@ const Header = () => {
                 <p className='m-lg-2 m-0'><Link className='text-decoration-none text-reset' to='/courses'>Courses</Link></p>
               </Navbar.Text>
               <Navbar.Text>
-                <p className='m-lg-2 m-0'><Link className='text-decoration-none text-reset' to='/'>Blogs</Link></p>
+                <p className='m-lg-2 m-0'><Link className='text-decoration-none text-reset' to='/blogs'>Blogs</Link></p>
               </Navbar.Text>
               
             </Nav>

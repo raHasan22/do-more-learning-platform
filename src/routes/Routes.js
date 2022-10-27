@@ -3,6 +3,7 @@ import Main from "../layout/Main";
 import CourseDetail from "../pages/CourseDetail/CourseDetail";
 import Courses from "../pages/Courses/Courses";
 import Home from "../pages/Home/Home";
+import Blogs from "../pages/blogs/Blogs";
 
 export const routes = createBrowserRouter([
     {
@@ -21,6 +22,10 @@ export const routes = createBrowserRouter([
                 path: '/courses/:id',
                 element: <CourseDetail></CourseDetail>,
                 loader: ({params}) => fetch(`https://learning-platform-server-side-beryl.vercel.app/courses/${params.id}`)
+            },
+            {
+                path: '/blogs',
+                element: <Blogs></Blogs>
             }
         ]
     }
